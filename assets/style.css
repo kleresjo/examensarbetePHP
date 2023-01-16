@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0; 
+    background-color: aquamarine;
+}
+
+.header-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+    color: hotpink;
+    font-size: 100px;
+}

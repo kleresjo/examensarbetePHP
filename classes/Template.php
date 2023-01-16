@@ -15,7 +15,7 @@ class Template
 
 ?>
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="sve">
 
         <head>
             <meta charset="UTF-8">
@@ -64,8 +64,8 @@ class Template
     public static function footer()
     {
         ?>
-            <footer class="footer_class">
-                Copyright Arkeologshoppen 2020
+            <footer>
+                Copyright Arkeologshoppen 2023
             </footer>
 
             <!-- <script src="/shop/assets/script.js"></script> -->

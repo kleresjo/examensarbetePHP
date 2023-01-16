@@ -6,7 +6,7 @@ Template::header("Arkeologshoppen");
 ?>
 
 
-    <h2> Om oss: </h2>
+    <h2 class="header-title"> Om Arkeologshoppen </h2>
     <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Adipisci at fuga nulla non ea optio maxime quo autem laboriosam
