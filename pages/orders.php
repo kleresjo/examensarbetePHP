@@ -8,7 +8,7 @@ require_once __DIR__ . "/../classes/ProductsDatabase.php";
 $is_logged_in = isset($_SESSION['user']);
 $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
 
-Template::header("Order page");
+Template::header("In med slider här");
 
 $orders_db = new OrdersDatabase();
 
@@ -19,8 +19,18 @@ $all_products = [];
 $order_value = 0;
 
 ?>
+            <div class="logged-in-box">
+                  <p class="log-in">Inloggad som:</p>
+                     <b><?= $logged_in_user->username ?></b>
+                    <form action="/scripts/post-logout.php" method="post">
+                        <input class="logout-btn" type="submit" value="Logga ut">
+                    </form>
+                    </div>
 
-<h2>Mina beställningar</h2>
+<hr>
+<br>
+<h2 class="konto-h2">Mina beställningar:</h2>
+<br>
 
 <?php
 if (!$is_logged_in) : ?>
@@ -28,15 +38,14 @@ if (!$is_logged_in) : ?>
 <?php endif; ?>
 
 <?php foreach ($orders as $order) : ?>
-
-    <hr><br>
+    <hr>
+<div class="order-card">
+    <br>
     <p>
         <b><p>ORDER-ID: </p></b><?=$order->id?>
         <b><p>STATUS: </p></b><?= $order->status ?>
         <b><p>DATUM: </p></b><?= $order->order_date?>
     </p>
-
-    <?php echo("Innan");?>
 
     <?php 
     $products = $products_db->get_by_order_id($order->id);
@@ -56,25 +65,17 @@ if (!$is_logged_in) : ?>
     </p>
 <?php endforeach; ?>
 
-<?php echo("Efter"); ?>
 
 <b> Order value: <?= $order_value ?> kr</b>
 <?php $order_value = 0; ?>
-
+</div>
 <hr>
 
-<?php echo("Efter varje order"); ?>
 
 <?php endforeach; ?>
 
 <?php $products = $products_db->get_by_order_id($logged_in_user->id); ?>
-<?php echo("Efter sista ordern"); ?>
-<div>
-<h2>Total value: <?= $sum = array_reduce($all_products, function ($arr, $value) {
 
-                return $arr + $value->price;
-            })  ?> Kr </h2>
-</div>
 
 <?php
 

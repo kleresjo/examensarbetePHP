@@ -8,7 +8,7 @@ $products = isset($_SESSION["cart"]) ? $_SESSION["cart"] : [];
 $total_sum = array_sum(array_column($products, 'price'));
 $is_logged_in = isset($_SESSION["user"]);
 
-Template::header("Cart"); ?>
+Template::header("In med slider här"); ?>
 
 <?php foreach ($products as $product) : ?>
 

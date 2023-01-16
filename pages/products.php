@@ -7,26 +7,25 @@ require_once __DIR__ . "/../classes/Template.php";
 $products_db = new ProductsDatabase();
 $products = $products_db->get_all();
 
-Template::header("Products");
+Template::header("Products"); ?>
 
-foreach ($products as $product) : ?>
-
-    <div>
-        <img src="<?= $product->img_url ?>" alt="Product image">
-        <div>
-            <b><?= $product->title ?> </b><br>
-            <i><?= $product->price ?> kr </i><br>
-            <?= $product->description ?>
-
-
+<div class="produkt-div-div">
+<?php foreach ($products as $product) : ?>
+    <div class="produkt-card">
+        <img src="<?= $product->img_url ?>" alt="<?= $product->decsription ?>" id="produkt-image">
+        <div class="produkt-des">
+            <b class="produkt-titel"><?= $product->title ?> </b><br>
+            <i class="produkt-pris"><?= $product->price ?> kr </i><br>
+            <p class="produkt-bes"><?= $product->description ?></p>
+            </div>
         <form action="/scripts/post-add-to-cart.php" method="post">
             <input type="hidden" name="product-id" value="<?= $product->id ?>">
-            <input type="submit" value="Add to cart">
+            <input type="submit" value="LÄGG I VARUKORGEN" class="produkt-btn">
         </form>
 </div>
-    </div>
 
 <?php
-endforeach;
+endforeach; ?>
+</div>
 
-Template::footer();
+<?php Template::footer(); ?>

@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 async function onClickProductDetails(e){
+    e.preventDefault();
     const id = this.dataset.id;
-
-    /* console.log(id); */
     const response = await fetch(`/api/get-product.php?id=${id}`);
     const product = await response.json();
 

@@ -22,41 +22,39 @@ class Template
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="/assets/style.css">
-            <title> <?= $title ?> - Startsida </title>
+            <title> <?= $title ?> - Arkeologishoppen </title>
 
         </head>
 
         <body>
-            <header>
-                <h1 class="title-class"> <?= $title ?> </h1>
+            <header class="header-title">
+                <h1> <?= $title ?> </h1>
             </header>
+
+            <!-- INSERT SLIDER HÄR -->
 
 
             <nav class="meny-nav">
+                <div class="meny-link">
                 <a href="/">Start</a>
                 <a href="/pages/products.php">Products</a>
                 <a href="/pages/cart.php">Cart(<?= $cart_count ?>)</a>
-
                 <?php if (!$is_logged_in) : ?>
                     <a href="/pages/login.php">Login</a>
                     <a href="/pages/register.php">Register</a>
                 <?php elseif ($is_admin) : ?>
                     <a href="/pages/admin.php">Admin area</a>
                 <?php endif; ?>
-            </nav>
-
-            <main>
+                <main>
                 <?php if ($is_logged_in) : ?>
-                    <p class="logged-in-box">
-                        <b>Logged in as: </b>
-                        <?= $logged_in_user->username ?>
+                    <a href="/pages/orders.php">Mitt konto</a>
+                </div>
 
-                    <form action="/scripts/post-logout.php" method="post">
-                        <input class="logout-btn" type="submit" value="Logout">
-                    </form>
-                    </p>
+                    </div>
                 <?php endif; ?>
             </main>
+            </div>
+            </nav>
 
 
 
@@ -65,7 +63,16 @@ class Template
     {
         ?>
             <footer>
-                Copyright Arkeologshoppen 2023
+                <div class="footer-div">
+                <nav>
+                <div class="footer-menu">
+                <a href="/">Start</a>
+                <a href="/pages/products.php">Products</a>
+                <a href="/pages/login.php">Login</a>
+                <a href="/pages/register.php">Register</a>
+                <p class="footer-p">Copyright Arkeologshoppen 2023</p>
+                </div>
+              </div>
             </footer>
 
             <!-- <script src="/shop/assets/script.js"></script> -->

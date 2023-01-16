@@ -12,11 +12,10 @@ $is_logged_in = isset($_SESSION["user"]);
 $logged_in_user = $is_logged_in ? $_SESSION["user"] : null;
 $is_admin = $is_logged_in && $logged_in_user->role == "admin";
 
-if(!$is_admin){ //om dom inte är admin
-    http_response_code(401); // access denied
+if(!$is_admin){ //om användaren inte är admin
+    http_response_code(401);
     die("Access denied!!");
 }
-
 
 $products_db = new ProductsDatabase();
 $users_db = new UsersDatabase();
@@ -27,46 +26,52 @@ $users = $users_db->get_all();
 $products = $products_db->get_all();
 
 
+Template::header("In med slider här"); ?>
 
-Template::header("Admin area"); ?>
+<h2 class="konto-h2"> Skapa en produkt </h2>
 
-<h2> Create product </h2>
+<hr>
 
-<form action="/admin-scripts/post-create-product.php" method="post" enctype="multipart/form-data">
-    <input type="text" name="title" placeholder="Title"> <br>
-    <textarea name="description" placeholder="Description"></textarea> <br>
-    <input type="number" name="price" placeholder="Price">
-    <input type="file" name="image" accept="image/*"><br>
-    <input type="submit" value="Save">
+<form action="/admin-scripts/post-create-product.php" method="post" enctype="multipart/form-data" class="skapa-produkt-card">
+    <input type="text" name="title" placeholder="Title" id="produkt-input"> <br>
+    <textarea name="description" placeholder="Description" id="produkt-input"></textarea> <br>
+    <input type="number" name="price" placeholder="Price" id="produkt-input">
+    <input type="file" name="image" accept="image/*" id="produkt-bild"><br>
+    <input type="submit" value="Save" class="produkt-btn">
 </form>
 
 <hr>
 
-<h2> Products </h2>
+<h2 class="konto-h2"> Products </h2>
 
 <?php foreach ($products as $product) : ?>
-    <p>
+    <div class="skapa-produkt-card">
+        <div class="produkt-card">
         <a href="/pages/admin-product.php?id=<?= $product->id ?>">
-        <?= $product->title ?>
+        <?= $product->title ?> <br>
+        </div>
     </a>
-    </p>
+</div> 
+
 <?php endforeach; ?>
+
 <hr>
-<h2> Users </h2>
+
+<h2 class="konto-h2"> Users </h2>
 
 <?php foreach ($users as $user) : ?>
-    <p>
-        <a href="/pages/admin-user.php?username=<?= $user->username ?>"><?= $user->username ?></a>
+    <p class="skapa-produkt-card">
+        <a class="admin-user" href="/pages/admin-user.php?username=<?= $user->username ?>"><?= $user->username ?></a>
         <i><?= $user->role ?></i>
     </p>
 
 <?php endforeach; ?>
 
 
-<h2>Orders</h2>
+<h2 class="konto-h2">Orders</h2>
 
 <?php foreach ($orders as $order) : ?>
-    <div>
+    <div class="skapa-produkt-card">
         <b>#<?= $order->id ?></b>
         <?= $order->order_date ?>
         <b>[<?= $order->status ?>]</b>
@@ -85,9 +90,8 @@ Template::header("Admin area"); ?>
             <input type="submit" value="Delete order">
 
         </form>
-
-
     </div>
+
     <hr>
 
 <?php endforeach; ?>
