@@ -1,0 +1,23 @@
+{
+  "name": "examensarbetephp",
+  "version": "1.0.0",
+  "description": "School project with PHP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kleresjo/examensarbetePHP.git"
+  },
+  "keywords": [],
+  "author": "Julia Kleresjö",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kleresjo/examensarbetePHP/issues"
+  },
+  "homepage": "https://github.com/kleresjo/examensarbetePHP#readme",
+  "dependencies": {
+    "require": "^2.4.20"
+  }
+}
