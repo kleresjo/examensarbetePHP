@@ -16,6 +16,8 @@ if(!$cart){
     header("Location: /pages/cart.php");
 }
 
+// lägger till datum och att ordern är waiting
+
 if ($is_logged_in && count($cart) > 0) {
 
     $order = new Order($logged_in_user->id, "waiting", date("Y-m-d"));

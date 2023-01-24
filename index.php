@@ -3,7 +3,7 @@
 require_once __DIR__ . "/classes/Template.php";
 
 
-Template::header("In med slider här"); 
+Template::header(""); 
 ?>
 
 <div class="index-div">
@@ -25,6 +25,8 @@ Template::header("In med slider här");
 <div class="produkt-div-div">
 
 </div>
+
+<!-- kod för att hämta produkter från mitt API -->
 
 <script>
     fetch('./products.json')

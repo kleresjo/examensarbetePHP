@@ -1,3 +1,4 @@
+<!-- kod för att registrera användare -->
 <?php
 
 require_once __DIR__ . "/../classes/User.php";
