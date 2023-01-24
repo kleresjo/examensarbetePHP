@@ -1,3 +1,4 @@
+<!-- den här koden uppdaterar användare -->
 <?php
 require_once __DIR__ . "/../classes/UsersDatabase.php";
 require_once __DIR__ . "/force-admin.php";

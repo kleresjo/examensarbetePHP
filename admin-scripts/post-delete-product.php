@@ -1,3 +1,4 @@
+<!-- den här koden raderar en produkt -->
 <?php
 
 require_once __DIR__ . "/../classes/ProductsDatabase.php";

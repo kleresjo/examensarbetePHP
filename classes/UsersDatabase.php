@@ -5,7 +5,7 @@ require_once __DIR__ . "/User.php";
 
 class UsersDatabase extends Database{
     
-    //get_one
+    // get_one
     public function get_one_by_username($username){
         $query = "SELECT * FROM users WHERE username = ?";
         $stmt = mysqli_prepare($this->conn, $query);
@@ -24,11 +24,8 @@ class UsersDatabase extends Database{
         }
         return $user;
     }
-
-    // get one by user id 
    
-
-    //get_all
+    // get_all
     public function get_all(){
         $query = "SELECT * FROM users";
         $result = mysqli_query($this->conn, $query);
@@ -43,7 +40,7 @@ class UsersDatabase extends Database{
     }
 
 
-    //create
+    // create användare
     public function create(User $user){
         $query = "INSERT INTO users (username, `password-hash`, `role`) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $query);
@@ -52,7 +49,7 @@ class UsersDatabase extends Database{
         return $success;
     }
 
-    // update
+    // update användare
     public function update(User $user){
         $query = "UPDATE users SET `role`=? WHERE username=?";
         $stmt = mysqli_prepare($this->conn, $query);
@@ -60,7 +57,7 @@ class UsersDatabase extends Database{
         return $stmt->execute();
     }
 
-    //delete
+    // delete användare
     public function delete($username){
         $query = "DELETE FROM users WHERE username = ?";
         $stmt = mysqli_prepare($this->conn, $query);

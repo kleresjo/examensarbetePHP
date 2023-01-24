@@ -1,3 +1,4 @@
+<!-- den här koden är för produktdatabasen -->
 <?php
 
 class Product{

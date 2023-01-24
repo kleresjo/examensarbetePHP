@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . "/../classes/Template.php";
-Template::header("In med slider här");
+Template::header("");
 ?>
+<!-- kod för att registrea sig -->
 
 <h2 class="konto-h2"> Registrera dig </h2>
 

@@ -1,3 +1,4 @@
+<!-- den här koden skapar användare och lägger i databasen och hashar lösenordet och ger användaren en roll som customer -->
 <?php
 
 class User {

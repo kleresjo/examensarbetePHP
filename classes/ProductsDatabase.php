@@ -4,7 +4,7 @@ require_once __DIR__ . "/Product.php";
 
 class ProductsDatabase extends Database{
     
-    //get_one
+    // get_one
     
     public function get_one($id){
         $query = "SELECT * FROM products WHERE id = ?";
@@ -27,7 +27,7 @@ class ProductsDatabase extends Database{
             return $product;
     }
 
-    //get_all
+    // get_all
     public function get_all(){
         $query = "SELECT * FROM products";
         $result = mysqli_query($this->conn, $query);
@@ -46,7 +46,7 @@ class ProductsDatabase extends Database{
         return $products;
     }
 
-     //get by order id
+     // get by order id
 
      public function get_by_order_id($order_id)
      {
@@ -80,7 +80,7 @@ class ProductsDatabase extends Database{
      
     
 
-    //create
+    // create produkt 
     public function create(Product $product){
         $query = "INSERT INTO products (title, `description`, price, `img-url`) VALUES (?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $query);
@@ -89,7 +89,7 @@ class ProductsDatabase extends Database{
         return $success;
     }
 
-   //update
+   // update produkt 
    public function update (Product $product, $id){
 
     $query = "UPDATE products SET `title`=?, `description`=?, price=?,`img-url`=? WHERE id=?";
@@ -98,7 +98,7 @@ class ProductsDatabase extends Database{
     return $stmt->execute();
 }
 
-    //delete
+    // delete produkt 
     public function delete($id){
         $query = "DELETE FROM products WHERE id = ?";
         $stmt = mysqli_prepare($this->conn, $query);

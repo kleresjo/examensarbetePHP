@@ -3,6 +3,7 @@
 require_once __DIR__ . "/User.php";
 session_start();
 
+// den här koden kollar ifall man är inloggad och ifall man är admin eller inte och uppdaterar varukorgen
 class Template
 {
     public static function header($title)
@@ -27,10 +28,24 @@ class Template
         </head>
 
         <body>
-            <header class="header-title">
-                <h1> <?= $title ?> </h1>
-            </header>
 
+            <!-- Slider kod -->
+<div class="slider-container">
+
+<!-- bilder som kommer upp i slidern -->
+<div class="mySlides fade">
+  <img src="/assets/uploads/photo-1632821405254-a8166e7c201d.webp" class="slider-img">
+</div>
+
+<div class="mySlides fade">
+  <img src="/assets/uploads/photo-1612773085209-476549690cd7.webp" class="slider-img">
+</div>
+
+<div class="mySlides fade">
+  <img src="/assets/uploads/photo-1420824471541-fe7e0ae0baa4.jpeg" class="slider-img">
+</div>
+</div>
+                   <!-- Menyn -->
             <nav class="meny-nav">
                 <div class="meny-link">
                 <a href="/">Hem</a>
@@ -53,12 +68,11 @@ class Template
             </div>
             </nav>
 
-
-
         <?php }
     public static function footer()
     {
         ?>
+        <!-- Footern -->
             <footer>
                 <div class="footer-div">
                 <nav>
@@ -74,12 +88,24 @@ class Template
               </div>
             </footer>
 
-            <!-- <script src="/shop/assets/script.js"></script> -->
+            <!-- Javascript för Slidern -->
+ <script>
+               let slideIndex = 0;
+showSlides();
 
-
-
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  slides[slideIndex-1].style.display = "block"; 
+  setTimeout(showSlides, 5000); // Byter bild car 5e sekund
+}
+            </script>
         </body>
-
         </html>
 <?php }
 }

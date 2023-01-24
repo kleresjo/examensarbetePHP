@@ -8,7 +8,9 @@ require_once __DIR__ . "/../classes/ProductsDatabase.php";
 $is_logged_in = isset($_SESSION['user']);
 $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
 
-Template::header("In med slider här");
+Template::header("");
+
+// orders kopplade till användar-ID 
 
 $orders_db = new OrdersDatabase();
 
@@ -19,6 +21,7 @@ $all_products = [];
 $order_value = 0;
 
 ?>
+                     <!-- skriver ut vem du är inloggad som -->
             <div class="logged-in-box">
                   <p class="log-in">Inloggad som:</p>
                      <b><?= $logged_in_user->username ?></b>
@@ -27,9 +30,9 @@ $order_value = 0;
                     </form>
                     </div>
 
-<hr>
+             <hr>
 <br>
-<h2 class="konto-h2">Mina beställningar:</h2>
+   <h2 class="konto-h2">Mina beställningar:</h2>
 <br>
 
 <?php
@@ -47,6 +50,7 @@ if (!$is_logged_in) : ?>
         <b><p>DATUM: </p></b><?= $order->order_date?>
     </p>
 
+    <!-- Den här koden skriver ut orders kopplade till user-id -->
     <?php 
     $products = $products_db->get_by_order_id($order->id);
 
@@ -65,7 +69,7 @@ if (!$is_logged_in) : ?>
     </p>
 <?php endforeach; ?>
 
-
+<!-- Den här koden skriver ut värdet av ens order -->
 <b> Order value: <?= $order_value ?> kr</b>
 <?php $order_value = 0; ?>
 </div>

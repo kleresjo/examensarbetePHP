@@ -1,3 +1,4 @@
+<!-- den här koden tömmer hela varukorgen -->
 <?php
 
 session_start();

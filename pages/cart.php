@@ -13,12 +13,13 @@ Template::header("In med slider här"); ?>
 <div  class="cart-produkt-card">
 <?php if (count($products) == 0) : ?>
  <?php if ($is_logged_in) : ?>
-
+<!-- är varukorgen tom lägger den in en text om att den är tom -->
      <div class="empty-cart">
           <a class="empty-cart-link" href="/pages/products.php">Lägg något i varukorgen!</a>
          </div>
           <?php endif; ?><?php endif; ?>
 
+<!-- skriver ut produkter i varukorgen -->
 <?php foreach ($products as $product) : ?>
 
     <article class="cart-card">
@@ -35,8 +36,10 @@ Template::header("In med slider här"); ?>
 <?php endforeach; ?>
 <?php if (count($products) > 0) : ?>
 
-    <h3> Total: <?= $total_sum ?></h3>
+    <h3> Total: <?= $total_sum ?></h3> <!-- skriver ut summa på hela ordern -->
 
+
+    <!-- är man inte inloggad ska man logga in för att lägga en beställning  -->
     <?php if ($is_logged_in) : ?>
         <form action="/scripts/post-place-order.php" method="post">
             <input type="submit" value="Bekräfta köp" class="produkt-btn">

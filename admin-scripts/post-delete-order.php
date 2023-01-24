@@ -1,3 +1,5 @@
+<!-- den här koden raderar en hel order -->
+
 <?php
 
 require_once __DIR__ . "/../classes/OrdersDatabase.php";

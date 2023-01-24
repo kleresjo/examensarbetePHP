@@ -1,3 +1,4 @@
+<!-- kod för att logga in -->
 <?php
 
 require_once __DIR__ . "/../classes/UsersDatabase.php";

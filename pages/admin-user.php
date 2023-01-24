@@ -11,6 +11,8 @@ Template ::header("Admin-user");
 
 ?>
 
+<!-- den här koden är för att uppdatera roller på användare -->
+
 <div>
 <div class="skapa-produkt-card">
 <h4>Uppdatera <?= $_GET["username"] ?></h2>

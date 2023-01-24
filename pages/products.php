@@ -4,10 +4,12 @@ require_once __DIR__ . "/../classes/Product.php";
 require_once __DIR__ . "/../classes/ProductsDatabase.php";
 require_once __DIR__ . "/../classes/Template.php";
 
+// skriver ut alla produkter i webshopen 
+
 $products_db = new ProductsDatabase();
 $products = $products_db->get_all();
 
-Template::header("In med slider här"); ?>
+Template::header(""); ?>
 
 <div class="produkt-div-div">
 <?php foreach ($products as $product) : ?>

@@ -1,6 +1,9 @@
 <?php
 //force admin
 
+
+// kollar så att den inloggade är admin för då får den andra förmåner 
+
 require_once __DIR__ . "/../classes/User.php";
 
 session_start();

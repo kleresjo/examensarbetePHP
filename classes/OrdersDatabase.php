@@ -6,7 +6,7 @@ require_once __DIR__ . "/Order.php";
 
 class OrdersDatabase extends Database {
 
-//get_one
+// get_one
 public function get_one_by_user_id($user_id){
     {
         $query = "SELECT op.id, op.`order-id`, u.username, os.`user-id`, os.`order-date`, os.`status` FROM `order-products` AS op
@@ -36,7 +36,7 @@ public function get_one_by_user_id($user_id){
     }
 }
 
-//get_all
+// get_all
 
 public function get_all(){
     $query = "SELECT * FROM `orders`";
@@ -58,7 +58,7 @@ public function get_all(){
     return $orders;
 }
 
-// Get order by user id
+// get order by user id
 
 public function get_order_by_user_id($user_id)
 {
@@ -87,7 +87,7 @@ public function get_order_by_user_id($user_id)
     return $orders;
 }
 
- //create
+ // create beställning
  
     public function create(Order $order)
     {
@@ -112,7 +112,7 @@ public function get_order_by_user_id($user_id)
         return $success;
     }
 
-    //update
+    // update beställning
 
     public function update_order_status($id, $status)
     {
@@ -123,7 +123,7 @@ public function get_order_by_user_id($user_id)
         return $success;
     }
 
-    //delete
+    // delete beställning 
 
     public function delete($id)
 

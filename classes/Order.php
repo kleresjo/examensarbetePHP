@@ -1,3 +1,4 @@
+<!-- den här koden är för orders databas -->
 <?php
 
 class Order{

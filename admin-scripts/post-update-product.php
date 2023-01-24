@@ -1,3 +1,4 @@
+<!-- den här koden uppdaterar produkter -->
 <?php 
 require_once __DIR__ . "/../classes/ProductsDatabase.php";
 require_once __DIR__ . "/force-admin.php";
@@ -5,7 +6,7 @@ require_once __DIR__ . "/force-admin.php";
 
 $success = false;
 
-
+// den här koden uppdaterar produkten
 if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["price"]) && isset($_GET["id"])) {
       $upload_directory = __DIR__ . "/../assets/uploads/";
       $upload_name = basename($_FILES["img_url"]["name"]); 

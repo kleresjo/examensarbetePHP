@@ -1,3 +1,4 @@
+<!-- kod för att lägga beställningar -->
 <?php
 
 require_once __DIR__ . "/../classes/Product.php";
@@ -12,7 +13,7 @@ $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
 
 
 if(!$cart){
-    header("Location: /Examensarbete/pages/cart.php");
+    header("Location: /pages/cart.php");
 }
 
 if ($is_logged_in && count($cart) > 0) {

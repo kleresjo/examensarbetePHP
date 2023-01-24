@@ -1,3 +1,4 @@
+<!-- detta är databasen -->
 <?php
 
 class Database{

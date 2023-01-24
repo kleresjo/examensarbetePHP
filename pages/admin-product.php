@@ -3,6 +3,8 @@
 require_once __DIR__ . "/../classes/Template.php";
 require_once __DIR__ . "/../classes/ProductsDatabase.php";
 
+// kollar så att du är admin som är inloggad
+
 $is_logged_in = isset($_SESSION["user"]);
 $logged_in_user = $is_logged_in ? $_SESSION["user"] : null;
 $is_admin = $is_logged_in && $logged_in_user->role == "admin";
@@ -16,6 +18,7 @@ if (!isset($_GET["id"])) {
     die("Invalid input");
 }
 
+// den här koden gör att man kan uppdatera produkterna
 $products_db = new ProductsDatabase();
 
 $product = $products_db->get_one($_GET["id"]);

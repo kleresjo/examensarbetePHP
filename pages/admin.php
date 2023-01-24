@@ -5,14 +5,12 @@ require_once __DIR__ . "/../classes/ProductsDatabase.php";
 require_once __DIR__ . "/../classes/UsersDatabase.php";
 require_once __DIR__ . "/../classes/OrdersDatabase.php";
 
-
-
-//kontrollera att användaren är inloggad som admin
+// kontrollera att användaren är inloggad som admin
 $is_logged_in = isset($_SESSION["user"]);
 $logged_in_user = $is_logged_in ? $_SESSION["user"] : null;
 $is_admin = $is_logged_in && $logged_in_user->role == "admin";
 
-if(!$is_admin){ //om användaren inte är admin
+if(!$is_admin){ // om användaren inte är admin
     http_response_code(401);
     die("Access denied!!");
 }
@@ -25,8 +23,9 @@ $orders = $orders_db->get_all();
 $users = $users_db->get_all();
 $products = $products_db->get_all();
 
+// kod för att kunna skapa produkter
 
-Template::header("In med slider här"); ?>
+Template::header(""); ?>
 
 <h2 class="konto-h2"> Skapa en produkt </h2>
 
@@ -41,6 +40,8 @@ Template::header("In med slider här"); ?>
 </form>
 
 <hr>
+
+<!-- kod som skriver ut produkter -->
 
 <h2 class="konto-h2"> Products </h2>
 
@@ -57,6 +58,8 @@ Template::header("In med slider här"); ?>
 
 <hr>
 
+<!-- skriver ut användare -->
+
 <h2 class="konto-h2"> Users </h2>
 
 <?php foreach ($users as $user) : ?>
@@ -66,6 +69,8 @@ Template::header("In med slider här"); ?>
     </p>
 
 <?php endforeach; ?>
+
+<!-- skriver ut alla ordrar -->
 
 
 <h2 class="konto-h2">Orders</h2>
