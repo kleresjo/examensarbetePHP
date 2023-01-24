@@ -20,7 +20,7 @@ Template::header("");
 <div>
     <img src="/assets/uploads/photo-1554303486-cb4b90a27751.webp" alt="" class="index-img">
 </div>
-<h2 class="index-title">Senaste produkterna</h2>
+<h2 class="index-title">Nya produkter</h2>
 
 <div class="produkt-div-div">
 

@@ -23,6 +23,7 @@ class Template
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="/assets/style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <title> <?= $title ?> - Arkeologishoppen </title>
 
         </head>
@@ -61,10 +62,13 @@ class Template
                 <?php if ($is_logged_in) : ?>
                     <a href="/pages/orders.php">Mitt konto</a>
                 </div>
-
                     </div>
                 <?php endif; ?>
             </main>
+               <!-- Hamburger menu -->
+                   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+                </a>
             </div>
             </nav>
 
@@ -73,25 +77,26 @@ class Template
     {
         ?>
         <!-- Footern -->
-            <footer>
-                <div class="footer-div">
-                <nav>
+            <footer class="footer">
                 <div class="footer-menu">
                 <a href="/">Hem</a>
                 <a href="/pages/products.php">Webshop</a>
                 <a href="/pages/login.php">Logga in</a>
                 <a href="/pages/register.php">Registrera konto</a>
-                <p class="footer-p">Kontakta oss</p>
-                <p class="footer-p">Jobba hos oss</p>
-                <p class="footer-p">Copyright Arkeologshoppen 2023</p>
+                  </div>
+                <div class="footer-menu">
+                <a>Kontakta oss</a>
+                <a>Jobba hos oss</a>
+                  </div>
+                <div class="footer-menu2">
+                <p class="footer-p">Copyright Arkeologishoppen 2023</p>
                 </div>
-              </div>
             </footer>
 
             <!-- Javascript för Slidern -->
  <script>
                let slideIndex = 0;
-showSlides();
+               showSlides();
 
 function showSlides() {
   let i;
@@ -104,6 +109,16 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block"; 
   setTimeout(showSlides, 5000); // Byter bild car 5e sekund
 }
+
+              function myFunction() {
+              var x = document.getElementById("meny-link");
+              if (x.style.display === "block") {
+              x.style.display = "none";
+              } 
+               else {
+               x.style.display = "block";
+            }
+           }
             </script>
         </body>
         </html>

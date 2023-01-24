@@ -32,7 +32,7 @@ $order_value = 0;
 
              <hr>
 <br>
-   <h2 class="konto-h2">Mina beställningar:</h2>
+   <h2 class="konto-h2">Mina orders:</h2>
 <br>
 
 <?php
