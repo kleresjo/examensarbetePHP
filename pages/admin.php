@@ -33,11 +33,11 @@ Template::header("In med slider här"); ?>
 <hr>
 
 <form action="/admin-scripts/post-create-product.php" method="post" enctype="multipart/form-data" class="skapa-produkt-card">
-    <input type="text" name="title" placeholder="Title" id="produkt-input"> <br>
-    <textarea name="description" placeholder="Description" id="produkt-input"></textarea> <br>
-    <input type="number" name="price" placeholder="Price" id="produkt-input">
-    <input type="file" name="image" accept="image/*" id="produkt-bild"><br>
-    <input type="submit" value="Save" class="produkt-btn">
+    <input type="text" name="title" placeholder="Titel" id="produkt-input"> <br>
+    <textarea name="description" placeholder="Beskrivning" id="produkt-input"></textarea> <br>
+    <input type="number" name="price" placeholder="Pris" id="produkt-input">
+    <input type="file" name="image" accept="image/*" id="edit-btn"><br>
+    <input type="submit" value="Spara" class="produkt-btn">
 </form>
 
 <hr>
@@ -82,12 +82,12 @@ Template::header("In med slider här"); ?>
                 <option value="waiting">Väntar på att packeteras</option>
                 <option value="Sent">Skickad</option>
             </select>
-            <input type="submit" value="Edit">
+            <input type="submit" value="Spara" class="edit-btn">
         </form>
 
         <form action="/admin-scripts/post-delete-order.php" method="post">
             <input type="hidden" name="id" value="<?= $order->id ?>">
-            <input type="submit" value="Delete order">
+            <input type="submit" value="Radera beställning" class="produkt-btn">
 
         </form>
     </div>

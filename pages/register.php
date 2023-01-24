@@ -1,13 +1,15 @@
 <?php
 require_once __DIR__ . "/../classes/Template.php";
-Template::header("Register user");
+Template::header("In med slider här");
 ?>
 
-    <form action="/scripts/post-register-user.php" method="post">
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-        <input type="password" name="confirm-password" placeholder="Confirm password"><br>
-        <input type="submit" value="Register">
+<h2 class="konto-h2"> Registrera dig </h2>
+
+    <form action="/scripts/post-register-user.php" method="post" class="skapa-produkt-card">
+        <input type="text" name="username" placeholder="Användarnamn"><br>
+        <input type="password" name="password" placeholder="Lösenord"><br>
+        <input type="password" name="confirm-password" placeholder="Bekräfta lösenord"><br>
+        <input type="submit" value="Skapa konto">
     </form>
 
 

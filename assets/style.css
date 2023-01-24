@@ -1,13 +1,17 @@
 body {
     margin: 0;
     padding: 0; 
-    background-color: rgb(232, 225, 217);
+    background-color: #ebefe7;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
 
 a {
     text-decoration: none;
 }
+
+/* STYLING FÖR SLIDER */
+  
+
 
 /* STYLING FÖR MENY */
 
@@ -135,11 +139,11 @@ a {
     color: white; 
     background-color: black;
     border: solid 1px black;
-    border-radius: 20px;
-    margin-left: 5%;
-    width: 90%;
-    height: 100%;
+    border-radius: 15px;
+    height: 30px;
     margin-bottom: 2%;
+    padding: 1.5%;
+    margin-top: 2%;
 }
 
 .produkt-btn:hover {
@@ -166,7 +170,8 @@ a {
     background-color: rgb(120, 63, 63);
     border: solid 1px rgb(120, 63, 63);
     border-radius: 20px;
-    width: 100px;
+    width: 20%;
+    padding: 0.5%;
     height: 100%;
     margin-top: 2%;
 }
@@ -199,6 +204,7 @@ a {
     margin: auto;
     width: 50%;
     margin-bottom: 0.5%;
+    margin-top: 0.5%;
 }
 
 .produkt-card {
@@ -242,4 +248,13 @@ a {
 .admin-user {
     color: black; 
     font-weight: bold;
+}
+
+/* CART STYLING */
+
+.cart-produkt-card {
+    border: solid rgb(125, 125, 125) 1px;
+    background-color: white;
+    margin: 2.5%;
+    padding: 4%;
 }

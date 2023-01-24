@@ -94,9 +94,10 @@ class ProductsDatabase extends Database{
 
     $query = "UPDATE products SET `title`=?, `description`=?, price=?,`img-url`=? WHERE id=?";
     $stmt = mysqli_prepare($this->conn, $query);
-    $stmt->bind_param("ssisi", $product->name, $product->description, $product->price, $product->img_url, $id);
+    $stmt->bind_param("ssisi", $product->title, $product->description, $product->price, $product->img_url, $id);
     return $stmt->execute();
 }
+
     //delete
     public function delete($id){
         $query = "DELETE FROM products WHERE id = ?";

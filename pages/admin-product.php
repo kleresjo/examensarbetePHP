@@ -29,20 +29,20 @@ if ($product == null) : ?>
 
 <?php else : ?>
 
-    <form action="/admin-scripts/post-update-product.php?id=<?= $_GET["id"] ?>" method="post" enctype="multipart/form-data">
+    <form action="/admin-scripts/post-update-product.php?id=<?= $_GET["id"] ?>" method="post" enctype="multipart/form-data" class="skapa-produkt-card">
         <input type="text" name="title" placeholder="Titel" value="<?= $product->title ?>"> <br>
         <textarea name="description" placeholder="Description"><?= $product->description ?></textarea> <br>
         <input type="number" name="price" placeholder="Price" value="<?= $product->price ?>"> <br>
-        <input type="file" name="image" accept="image/*"> <br>
-        <input type="submit" value="Save">
-    </form>
+        <input type="file" name="img_url" accept="image/*"> <br>
+        <input type="submit" value="Save" class="produkt-btn">
+        </form>
 
     <p><b>Delete:</b></p>
 
     <form action="/admin-scripts/post-delete-product.php" method="post">
         <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
-        <input type="submit" value="Delete product">
-    </form>
+        <input type="submit" value="Radera produkt" class="logout-btn">
+</form>
 
 
 <?php

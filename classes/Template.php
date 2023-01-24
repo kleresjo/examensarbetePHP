@@ -31,19 +31,16 @@ class Template
                 <h1> <?= $title ?> </h1>
             </header>
 
-            <!-- INSERT SLIDER HÄR -->
-
-
             <nav class="meny-nav">
                 <div class="meny-link">
-                <a href="/">Start</a>
-                <a href="/pages/products.php">Products</a>
-                <a href="/pages/cart.php">Cart(<?= $cart_count ?>)</a>
+                <a href="/">Hem</a>
+                <a href="/pages/products.php">Webshop</a>
+                <a href="/pages/cart.php">Kundvagn(<?= $cart_count ?>)</a>
                 <?php if (!$is_logged_in) : ?>
-                    <a href="/pages/login.php">Login</a>
-                    <a href="/pages/register.php">Register</a>
+                    <a href="/pages/login.php">Logga in</a>
+                    <a href="/pages/register.php">Registera konto</a>
                 <?php elseif ($is_admin) : ?>
-                    <a href="/pages/admin.php">Admin area</a>
+                    <a href="/pages/admin.php">Admin</a>
                 <?php endif; ?>
                 <main>
                 <?php if ($is_logged_in) : ?>
@@ -66,10 +63,12 @@ class Template
                 <div class="footer-div">
                 <nav>
                 <div class="footer-menu">
-                <a href="/">Start</a>
-                <a href="/pages/products.php">Products</a>
-                <a href="/pages/login.php">Login</a>
-                <a href="/pages/register.php">Register</a>
+                <a href="/">Hem</a>
+                <a href="/pages/products.php">Webshop</a>
+                <a href="/pages/login.php">Logga in</a>
+                <a href="/pages/register.php">Registrera konto</a>
+                <p class="footer-p">Kontakta oss</p>
+                <p class="footer-p">Jobba hos oss</p>
                 <p class="footer-p">Copyright Arkeologshoppen 2023</p>
                 </div>
               </div>

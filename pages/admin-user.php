@@ -12,7 +12,7 @@ Template ::header("Admin-user");
 ?>
 
 <div>
-<div>
+<div class="skapa-produkt-card">
 <h4>Uppdatera <?= $_GET["username"] ?></h2>
 <form action="/admin-scripts/post-update-user.php?username=<?= $_GET["username"] ?>" method="post">
 <select name="role">
@@ -22,7 +22,7 @@ Template ::header("Admin-user");
         <option value="customer">Kund</option>
     </select><br>
 
-    <input type="submit" value="Spara"><br>
+    <input type="submit" value="Spara" class="produkt-btn"><br>
 
 </form>
 
@@ -30,7 +30,7 @@ Template ::header("Admin-user");
 
     <form action="/admin-scripts/post-delete-user.php" method="post">
         <input type="hidden" name="username" value="<?= $_GET["username"] ?>">
-        <input type="submit" value="Radera användare">
+        <input type="submit" value="Radera användare" class="logout-btn">
     </form>
     </div>
 </div>

@@ -2,7 +2,8 @@
 
 require_once __DIR__ . "/classes/Template.php";
 
-Template::header("Arkeologishoppen"); 
+
+Template::header("In med slider här"); 
 ?>
 
 <div class="index-div">
@@ -19,5 +20,32 @@ Template::header("Arkeologishoppen");
 <div>
     <img src="/assets/uploads/photo-1554303486-cb4b90a27751.webp" alt="" class="index-img">
 </div>
+<h2 class="index-title">Senaste produkterna</h2>
+
+<div class="produkt-div-div">
+
+</div>
+
+<script>
+    fetch('./products.json')
+    
+    .then(res => {
+        return res.json();
+    })
+
+    .then(jsondata => {
+         jsondata.forEach(product => {
+            const productLine =  `<div class="produkt-card"><img id="produkt-image" src="${product.productImg}"></img>
+            <p class="produkt-titel">${product.productName}</p>
+            <p class="produkt-pris">${product.productPrice} kr</p>
+            </div>`
+            document.querySelector('.produkt-div-div').insertAdjacentHTML('beforeend', productLine);
+        });
+    })
+
+    .catch(error => console.log(error));
+
+</script>
+
 <?php
 Template::footer();

@@ -10,16 +10,27 @@ $is_logged_in = isset($_SESSION["user"]);
 
 Template::header("In med slider här"); ?>
 
+<div  class="cart-produkt-card">
+<?php if (count($products) == 0) : ?>
+ <?php if ($is_logged_in) : ?>
+
+     <div class="empty-cart">
+          <a class="empty-cart-link" href="/pages/products.php">Lägg något i varukorgen!</a>
+         </div>
+          <?php endif; ?><?php endif; ?>
+
 <?php foreach ($products as $product) : ?>
 
-    <article>
-        <img src="<?= $product->img_url ?>" height="75" width="75">
+    <article class="cart-card">
+        <img src="<?= $product->img_url ?>" height="150" width="100">
         <div>
             <b><?= $product->title ?></b>
             <?= $product->price ?> kr
-        <!-- in med en delete knapp här -->
+            </form>
         </div>
     </article>
+
+    <hr>
 
 <?php endforeach; ?>
 <?php if (count($products) > 0) : ?>
@@ -28,18 +39,19 @@ Template::header("In med slider här"); ?>
 
     <?php if ($is_logged_in) : ?>
         <form action="/scripts/post-place-order.php" method="post">
-            <input type="submit" value="Place order">
+            <input type="submit" value="Bekräfta köp" class="produkt-btn">
         </form>
+        <form action="/scripts/post-delete-cart-product.php" method="post">
+            <input type="submit" value="Radera varukorg" class="produkt-btn">
+    </form>
     <?php else : ?>
-        <a href="/pages/login.php"> Login to place order </a>
+        <a href="/pages/login.php"> Logga in för att lägga en beställning </a>
     <?php endif; ?>
 <?php else : ?>
 
 <?php endif; ?>
 
-<?php if (count($products) < 0) : ?>
-    <a href="/pages/products.php"> Cart is empty</a>
-<?php endif; ?>
+</div>
 
 <?php Template::footer();
 

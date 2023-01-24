@@ -7,7 +7,7 @@ require_once __DIR__ . "/../classes/Template.php";
 $products_db = new ProductsDatabase();
 $products = $products_db->get_all();
 
-Template::header("Products"); ?>
+Template::header("In med slider här"); ?>
 
 <div class="produkt-div-div">
 <?php foreach ($products as $product) : ?>
@@ -18,6 +18,7 @@ Template::header("Products"); ?>
             <i class="produkt-pris"><?= $product->price ?> kr </i><br>
             <p class="produkt-bes"><?= $product->description ?></p>
             </div>
+            
         <form action="/scripts/post-add-to-cart.php" method="post">
             <input type="hidden" name="product-id" value="<?= $product->id ?>">
             <input type="submit" value="LÄGG I VARUKORGEN" class="produkt-btn">
