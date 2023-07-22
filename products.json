@@ -1,20 +1,30 @@
 [
     {
         "id": "0",
-        "productName": "Spade",
+        "productName": "TITEL",
         "productPrice": "1299",
-        "productImg": "https://images.unsplash.com/photo-1596277922657-f80257171aec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2hvdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
+        "productDes":"Beskrivning",
+        "productImg": "http://localhost:8888/assets/uploads/1690018428.png"
     },
     {
         "id": "1",
-        "productName": "Måttband",
-        "productPrice": "39",
-        "productImg": "https://images.unsplash.com/photo-1541693823712-3892863d6bac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+        "productName": "TITEL",
+        "productPrice": "129",
+        "productDes":"Beskrivning",
+        "productImg": "http://localhost:8888/assets/uploads/1690018428.png"
     },
     {
         "id": "2",
-        "productName": "ZIPLOCK PÅSAR 100ST",
+        "productName": "TITEL",
         "productPrice": "129",
-        "productImg": "https://images.unsplash.com/photo-1640768029804-49525db1e827?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+        "productDes":"Beskrivning",
+        "productImg": "http://localhost:8888/assets/uploads/1690018428.png"
+    },
+    {
+        "id": "3",
+        "productName": "TITEL",
+        "productPrice": "129",
+        "productDes":"Beskrivning",
+        "productImg": "http://localhost:8888/assets/uploads/1690018428.png"
     }
 ]

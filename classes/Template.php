@@ -25,19 +25,6 @@ class Template
         </head>
         <body>
 
-<!-- Slider kod -->
-<div class="slider-container">
-<!-- bilder som kommer upp i slidern -->
-<div class="mySlides fade">
-  <img src="/assets/uploads/photo-1632821405254-a8166e7c201d.webp" class="slider-img">
-</div>
-<div class="mySlides fade">
-  <img src="/assets/uploads/photo-1612773085209-476549690cd7.webp" class="slider-img">
-</div>
-<div class="mySlides fade">
-  <img src="/assets/uploads/photo-1420824471541-fe7e0ae0baa4.jpeg" class="slider-img">
-</div>
-</div>
             <!-- Menyn -->
             <nav class="meny-nav">
                 <div class="meny-link">
