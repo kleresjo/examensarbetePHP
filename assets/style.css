@@ -13,8 +13,8 @@ a {
 }
 
 :root { 
-     --main-bg-color: #45574f;
-     --second-bg-color: #ebefe7;
+     --main-bg-color: #e6e6db;
+     --second-bg-color: #2f3529;
      --main-nav-color: #ccc19e;
      --second-nav-color: #b0a275;
  }
@@ -146,13 +146,11 @@ a {
 
 .produkt-div-div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 3%; 
     margin-bottom: 3%;
     width: 100%;
     height: 100%;
-    column-gap: 10px;
-    gap: 50px;
 }
 
 .produkt-card {
